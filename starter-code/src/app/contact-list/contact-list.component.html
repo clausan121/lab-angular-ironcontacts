@@ -1,18 +1,57 @@
-<div>
-  <label for="contact-name"></label>
-  <input type="text" [(ngModel)]="newContact.name">
-</div>
-<div>
-  <label for="contact-email"></label>
-  <input type="text" [(ngModel)]="newContact.email">
-</div>
-<div>
-  <label for="contact-phone"></label>
-  <input type="text" [(ngModel)]="newContact.phoneNumber">
-</div>
-<div>
-  <label for="contact-image"></label>
-  <input type="text" [(ngModel)]="newContact.image">
-</div>
 
-<button (click)="addContact">Submit New Contact</button>
+
+
+<br>
+<br>
+<br>
+
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<div class="row">
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4">
+        <div id="form-div" class="container">
+        <div>
+          <label for="contact-name"></label>
+          <input type="text" placeholder="name" [(ngModel)]="newContact.name">
+        </div>
+        <div>
+          <label for="contact-email"></label>
+          <input type="text" placeholder="email" [(ngModel)]="newContact.email">
+        </div>
+        <div>
+          <label for="contact-phone"></label>
+          <input type="text" placeholder="phone" [(ngModel)]="newContact.phoneNumber">
+        </div>
+        <div>
+          <label for="contact-image"></label>
+          <input type="text" placeholder="image" [(ngModel)]="newContact.image">
+        </div>
+        
+        <button (click)="addContact()">Submit New Contact</button>
+        
+        </div>
+
+
+
+    </div>
+    <div class="col-6 col-md-4"></div>
+  </div>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+<div *ngFor = "let contactlist of contacts">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="/assets/images/profile.png" alt="Card image cap">
+    <h5 class="card-title">Name: {{contactlist.name}}</h5>
+    <div class="card-body">
+      <p class="card-text">Email: {{contactlist.email}}</p>
+      <p class="card-text">Phone: {{contactlist.phoneNumber}}</p>
+    </div>
+  </div>
+</div>
