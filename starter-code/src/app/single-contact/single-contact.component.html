@@ -1,0 +1,10 @@
+<p>
+  single-contact works!
+</p>
+<div>
+  <img [src]="oneSingleContact.image" >
+  <h3>{{oneSingleContact.name}}</h3>
+  <h4>{{oneSingleContact.email}}</h4>
+  <h4>{{oneSingleContact.phoneNumber}}</h4>
+  </div>
+<button type="button" (click)="deleteContact(oneSingleContact)">Delete Cotact</button>
